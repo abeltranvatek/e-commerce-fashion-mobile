@@ -1,0 +1,44 @@
+{
+  "LoginScreen": {
+    "LoginScreenTittleFashionCommerce": "FashionCommerce",
+    "LoginScreenTittle": "Log in",
+    "LoginScreenPlaceHolderEmail": "Email",
+    "LoginScreenPlaceHolderPassword": "Password",
+    "LoginScreenButtonLogin": "Login",
+    "LoginScreenTextForgotPassword": "Forgot Password?",
+    "LoginScreenTextRegister": "Register",
+    "LoginScreenTextNewUser": "New User?"
+  },
+  "RegisterScreen": {
+    "RegisterTitleFashionCommerce": "FashionCommerce",
+    "RegisterScreenTitle": "Register",
+    "RegisterScreenPlaceHolderName": "Name",
+    "RegisterScreenPlaceHolderEmail": "Email",
+    "RegisterScreenPlaceHolderRepeatPassword": "Repeat password",
+    "RegisterScreenPlaceHolderPassword": "Password",
+    "RegisterScreenButtonLogin": "Register",
+    "RegisterScreenTextRegister": "Already have an account?",
+    "RegisterScreenTextLogin": " Login"
+  },
+  "ForgotPasswordScreen": {
+    "ForgotPasswordScreenTitleFashionCommerce": "FashionCommerce",
+    "ForgotPasswordScreenTitle": "Forgot your password?",
+    "ForgotPasswordScreenDesc": "We will send a verification link to your email address.",
+    "ForgotPasswordScreenPlaceHolderEmail": "Email",
+    "ForgotPasswordScreenBtnSend": "Send",
+    "ForgotPasswordScreenBtnCancel": "Cancel"
+  },
+  "ResetPasswordScreen": {
+    "ResetPasswordScreenTitleFashionCommerce": "FashionCommerce",
+    "ResetPasswordScreenTitle": "Reset Password",
+    "ResetPasswordScreenPlaceHolderNewPassword": "New Password",
+    "ResetPasswordScreenPlaceHolderConfirmNewPassword": "Confirm new password",
+    "ForgotPasswordScreenBtnReset": "Reset",
+    "ForgotPasswordScreenBtnCancel": "Cancel"
+  },
+  "FeedScreenEmpty":{
+    "FeedScreenTitleFashionCommerce":"FashionCommerce",
+    "FeedScreenTextNoEvent":"No events yet.",
+    "FeedScreenTextCreate":"You can create first!"
+  }
+}
