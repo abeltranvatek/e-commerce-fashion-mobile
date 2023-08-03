@@ -4,13 +4,17 @@ import {ScreenName} from '../screenName';
 import LoginScreen from '../../auth/loginScreen';
 import RegisterScreen from '../../auth/registerScreen';
 import ForgotPassword from '../../auth/forgotPasswordScreen';
-import ResetPassword from '../../auth/resetPasswordScreen';
+import OnboardScreenThree from '../../auth/onboard/onboardScreenThree';
+import OnboardScreenTwo from '../../auth/onboard/onboardScreenTwo';
+import OnboardScreenOne from '../../auth/onboard/onboardScreenOne';
 
 const LoginStack = createStackNavigator();
 
 const LoginStackScreen = () => {
   return (
-    <LoginStack.Navigator screenOptions={{headerShown: false}}>
+    <LoginStack.Navigator
+      screenOptions={{headerShown: false}}
+      initialRouteName={ScreenName.ONBOARD_SCREEN_ONE}>
       <LoginStack.Screen
         key={ScreenName.LOGIN_SCREEN}
         name={ScreenName.LOGIN_SCREEN}
@@ -30,10 +34,23 @@ const LoginStackScreen = () => {
         component={ForgotPassword}
         options={{gestureEnabled: false}}
       />
-       <LoginStack.Screen
-        key={ScreenName.RESET_PASSWORD}
-        name={ScreenName.RESET_PASSWORD}
-        component={ResetPassword}
+      <LoginStack.Screen
+        key={ScreenName.ONBOARD_SCREEN_ONE}
+        name={ScreenName.ONBOARD_SCREEN_ONE}
+        component={OnboardScreenOne}
+        options={{gestureEnabled: false}}
+      />
+      <LoginStack.Screen
+        key={ScreenName.ONBOARD_SCREEN_TWO}
+        name={ScreenName.ONBOARD_SCREEN_TWO}
+        component={OnboardScreenTwo}
+        options={{gestureEnabled: false}}
+      />
+      <LoginStack.Screen
+        key={ScreenName.ONBOARD_SCREEN_THREE}
+        name={ScreenName.ONBOARD_SCREEN_THREE}
+        component={OnboardScreenThree}
+        options={{gestureEnabled: false}}
       />
     </LoginStack.Navigator>
   );
