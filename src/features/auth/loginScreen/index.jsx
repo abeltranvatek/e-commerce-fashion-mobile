@@ -5,6 +5,7 @@ import {
   View,
   TextInput,
   ImageBackground,
+  SafeAreaView,
 } from 'react-native';
 import LoginScreenStyles from './style';
 import {translate} from '../../../utils/language';
@@ -25,7 +26,11 @@ const LoginScreen = () => {
     );
   };
 
-  return <View></View>;
+  return (
+    <SafeAreaView>
+      <Text>LoginScreen</Text>
+    </SafeAreaView>
+  );
 };
 
 export default LoginScreen;

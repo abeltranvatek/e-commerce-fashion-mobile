@@ -30,7 +30,11 @@ export const OnboardScreenThreeStyles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '400',
     color: '#000',
-    opacity: 0.5,
+  },
+  headerSkip: {
+    fontSize: 16,
+    fontWeight: '400',
+    color: '#000',
   },
   img: {},
   descContainer: {
@@ -53,15 +57,19 @@ export const OnboardScreenThreeStyles = StyleSheet.create({
     height: 70,
   },
   btnNext: {
-    flexDirection: 'row',
     width: '60%',
     backgroundColor: '#F67952',
     borderRadius: 120,
     height: 60,
+    marginTop: 35,
+  },
+  touchable: {
+    width: '100%',
+    height: '100%',
+    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     textAlign: 'center',
-    marginTop: 35,
   },
   btnNextText: {
     fontSize: 20,
