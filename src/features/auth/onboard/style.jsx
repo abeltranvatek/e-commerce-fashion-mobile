@@ -1,21 +1,16 @@
 import {StyleSheet} from 'react-native';
-import {width} from '~utils/dimensions';
-export const OnboardScreenThreeStyles = StyleSheet.create({
+
+export const OnboardScreenStyles = StyleSheet.create({
   container: {
     flex: 1,
-    width: width,
-    paddingLeft: 20,
-    paddingRight: 20,
-    paddingTop: 5,
-    backgroundColor: '#fff',
+    width: '100%',
     alignItems: 'center',
   },
   header: {
-    width: '100%',
+    width: '90%',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginBottom: 56,
   },
   headerLeft: {
     flexDirection: 'row',
@@ -25,6 +20,7 @@ export const OnboardScreenThreeStyles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '400',
     color: '#000',
+    opacity: 0.5,
   },
   headerLeftText: {
     fontSize: 16,
@@ -36,7 +32,22 @@ export const OnboardScreenThreeStyles = StyleSheet.create({
     fontWeight: '400',
     color: '#000',
   },
-  img: {},
+  viewContainer: {
+    flex: 1,
+    width: '90%',
+    alignItems: 'center',
+  },
+  imgContainer: {
+    marginTop: 56,
+    width: '100%',
+    height: 325,
+    aspectRatio: 1 / 1,
+    resizeMode: 'stretch',
+  },
+  img: {
+    width: '100%',
+    height: '100%',
+  },
   descContainer: {
     marginTop: 40,
   },
@@ -76,5 +87,12 @@ export const OnboardScreenThreeStyles = StyleSheet.create({
     fontWeight: '500',
     color: '#fff',
     paddingBottom: 3,
+  },
+  iconContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  btnNextIconRight: {
+    marginLeft: -12,
   },
 });
