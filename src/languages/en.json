@@ -1,24 +1,25 @@
 {
   "LoginScreen": {
-    "LoginScreenTittleFashionCommerce": "FashionCommerce",
     "LoginScreenTittle": "Log in",
     "LoginScreenPlaceHolderEmail": "Email",
     "LoginScreenPlaceHolderPassword": "Password",
     "LoginScreenButtonLogin": "Login",
     "LoginScreenTextForgotPassword": "Forgot Password?",
-    "LoginScreenTextRegister": "Register",
-    "LoginScreenTextNewUser": "New User?"
+    "LoginScreenTextBtnLogin": "Login",
+    "LoginScreenTextOr": "Or",
+    "LoginScreenTextAccount": "Don’t have an account? ",
+    "LoginScreenTextSignUp": "Sign Up"
   },
   "RegisterScreen": {
-    "RegisterTitleFashionCommerce": "FashionCommerce",
-    "RegisterScreenTitle": "Register",
+    "RegisterScreenTitle": "Sign Up",
     "RegisterScreenPlaceHolderName": "Name",
     "RegisterScreenPlaceHolderEmail": "Email",
-    "RegisterScreenPlaceHolderRepeatPassword": "Repeat password",
     "RegisterScreenPlaceHolderPassword": "Password",
-    "RegisterScreenButtonLogin": "Register",
-    "RegisterScreenTextRegister": "Already have an account?",
-    "RegisterScreenTextLogin": " Login"
+    "RegisterScreenTextAccept": "I accept all the ",
+    "RegisterScreenTextTerm": " Terms & Conditions",
+    "RegisterScreenTextOr": "Or",
+    "RegisterScreenTextAccount": "Already have an account? ",
+    "RegisterScreenTextLogin": "Log In"
   },
   "ForgotPasswordScreen": {
     "ForgotPasswordScreenTitleFashionCommerce": "FashionCommerce",

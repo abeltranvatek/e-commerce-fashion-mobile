@@ -20,6 +20,7 @@
     "i18n-js": "^4.3.0",
     "react": "18.1.0",
     "react-native": "0.70.12",
+    "react-native-bouncy-checkbox": "^3.0.7",
     "react-native-config": "^1.5.1",
     "react-native-device-info": "^10.8.0",
     "react-native-event-listeners": "^1.0.7",

@@ -12,7 +12,7 @@ const LoginStackScreen = () => {
   return (
     <LoginStack.Navigator
       screenOptions={{headerShown: false}}
-      initialRouteName={ScreenName.ONBOARD_SCREEN}>
+      initialRouteName={ScreenName.LOGIN_SCREEN}>
       <LoginStack.Screen
         key={ScreenName.LOGIN_SCREEN}
         name={ScreenName.LOGIN_SCREEN}
