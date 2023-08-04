@@ -1,13 +1,6 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
-import {ScreenName} from '../screenName';
-import FeedScreen from '../../home/feedScreen';
-import {Image} from 'react-native';
-import {UserGroupIcon, HomeIcon, UserIcon, PlusIcon, MoreIcon} from 'assets';
-import MatesScreen from '../../home/matesScreen';
-import AddEventScreen from '../../home/addEventScreen';
-import MoreScreen from '../../home/moreScreen';
-import ProfileScreen from '../../home/profileScreen';
+
 const HomeBar = createBottomTabNavigator();
 const HomeBarStackScreen = () => {
   return (
@@ -19,7 +12,7 @@ const HomeBarStackScreen = () => {
         tabBarActiveTintColor:"#E57773"
       }}
       initialRouteName="feed">
-      <HomeBar.Screen
+      {/* <HomeBar.Screen
         key={ScreenName.FEED_SCREEN}
         name={ScreenName.FEED_SCREEN}
         component={FeedScreen}
@@ -113,7 +106,7 @@ const HomeBarStackScreen = () => {
                 }}></Image>
             );
           },
-        }}></HomeBar.Screen>
+        }}></HomeBar.Screen> */}
     </HomeBar.Navigator>
   );
 };

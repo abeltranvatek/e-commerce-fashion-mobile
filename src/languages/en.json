@@ -28,17 +28,18 @@
     "ForgotPasswordScreenBtnSend": "Send",
     "ForgotPasswordScreenBtnCancel": "Cancel"
   },
-  "ResetPasswordScreen": {
-    "ResetPasswordScreenTitleFashionCommerce": "FashionCommerce",
-    "ResetPasswordScreenTitle": "Reset Password",
-    "ResetPasswordScreenPlaceHolderNewPassword": "New Password",
-    "ResetPasswordScreenPlaceHolderConfirmNewPassword": "Confirm new password",
-    "ForgotPasswordScreenBtnReset": "Reset",
-    "ForgotPasswordScreenBtnCancel": "Cancel"
-  },
-  "FeedScreenEmpty":{
-    "FeedScreenTitleFashionCommerce":"FashionCommerce",
-    "FeedScreenTextNoEvent":"No events yet.",
-    "FeedScreenTextCreate":"You can create first!"
+  "OnboardScreen": {
+    "OnboardScreenTextOne": "1",
+    "OnboardScreenTextTwo": "2",
+    "OnboardScreenTextThree": "3",
+    "OnboardScreenTextSlash": "/",
+    "OnboardScreenTextSkip": "Skip",
+    "OnboardScreenTextChoseProduct": "Choose Product",
+    "OnboardScreenTextChoseProductDesc": "A product is the item offered for sale.\nA product can be a service or an item. It can be\nphysical or in virtual or cyber form",
+    "OnboardScreenTextNext": "Next",
+    "OnboardScreenTextMakePayment": "Make Payment",
+    "OnboardScreenTextMakePaymentDesc": "Payment is the transfer of money \nservices in exchange product or Payments \ntypically made terms agreed ",
+    "OnboardScreenTextOder": "Get Your Order",
+    "OnboardScreenTextOderDesc": "Business or commerce an order is a stated\n intention either spoken to engage in a\n commercial transaction specific products "
   }
 }
