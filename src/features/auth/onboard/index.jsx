@@ -44,29 +44,12 @@ const data = [
   },
 ];
 const OnboardScreen = () => {
-  const fadeImg = useRef(new Animated.Value(0)).current;
-  const fadeDesc = useRef(new Animated.Value(0)).current;
-  const fadeBtn = useRef(new Animated.Value(0)).current;
+  const fadeImg = useRef(new Animated.Value(100)).current;
+  const fadeDesc = useRef(new Animated.Value(100)).current;
+  const fadeBtn = useRef(new Animated.Value(100)).current;
   const swiperRef = useRef(null);
   const [count, setCount] = useState(1);
 
-  useEffect(() => {
-    Animated.timing(fadeImg, {
-      toValue: 1,
-      duration: 2000,
-      useNativeDriver: true,
-    }).start();
-    Animated.timing(fadeDesc, {
-      toValue: 1,
-      duration: 3000,
-      useNativeDriver: true,
-    }).start();
-    Animated.timing(fadeBtn, {
-      toValue: 1,
-      duration: 3000,
-      useNativeDriver: true,
-    }).start();
-  }, [count]);
   const next = item => {
     if (swiperRef) {
       swiperRef.current.scrollBy(1);
@@ -81,7 +64,8 @@ const OnboardScreen = () => {
       ref={swiperRef}
       dot={false}
       loop={false}
-      showsPagination={false}>
+      showsPagination={false}
+      scrollEnabled={ false }>
       {data.map(item => (
         <SafeAreaView key={item.id} style={OnboardScreenStyles.container}>
           <View style={OnboardScreenStyles.viewContainer}>
@@ -120,7 +104,6 @@ const OnboardScreen = () => {
               <TouchableOpacity
                 style={OnboardScreenStyles.touchable}
                 onPress={() => {
-                  setCount(count => count + 1);
                   next(item);
                 }}>
                 <Text style={OnboardScreenStyles.btnNextText}>
