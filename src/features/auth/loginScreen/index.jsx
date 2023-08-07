@@ -53,7 +53,11 @@ const LoginScreen = () => {
           </TouchableOpacity>
         </View>
         <View style={LoginScreenStyles.bottom}>
-          <TouchableOpacity style={LoginScreenStyles.btn}>
+          <TouchableOpacity
+            style={LoginScreenStyles.btn}
+            onPress={() => {
+              navigate({screen: ScreenName.HOME_BAR_STACK_SCREEN});
+            }}>
             <Text style={LoginScreenStyles.btnText}>
               {translate('LoginScreen.LoginScreenTextBtnLogin')}
             </Text>

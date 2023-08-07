@@ -19,6 +19,7 @@ import {
   UserIcon,
   TickIcon,
 } from 'assets';
+import {navigate} from '~utils/navigation';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
 import {ScreenName} from '../../navigation/screenName';
 import {useState} from 'react';
@@ -60,7 +61,9 @@ const RegisterScreen = () => {
               {check ? (
                 <View style={SignUpScreenStyles.CheckBoxCustom}></View>
               ) : (
-                <Image source={TickIcon} style={SignUpScreenStyles.iconTick}></Image>
+                <Image
+                  source={TickIcon}
+                  style={SignUpScreenStyles.iconTick}></Image>
               )}
             </TouchableOpacity>
             <Text style={SignUpScreenStyles.textAccept}>

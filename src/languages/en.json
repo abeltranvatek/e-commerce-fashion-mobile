@@ -42,5 +42,20 @@
     "OnboardScreenTextMakePaymentDesc": "Payment is the transfer of money \nservices in exchange product or Payments \ntypically made terms agreed ",
     "OnboardScreenTextOder": "Get Your Order",
     "OnboardScreenTextOderDesc": "Business or commerce an order is a stated\n intention either spoken to engage in a\n commercial transaction specific products "
+  },
+  "HomeScreen": {
+    "HomeScreenTextExplore": "Explore",
+    "HomeScreenTextBest": "best Outfits for you",
+    "HomeScreenPlaceholderSearch": "Search items...",
+    "HomeScreenTextDress": "Dress",
+    "HomeScreenTextShirt": "Shirt",
+    "HomeScreenTextPants": "Pants",
+    "HomeScreenTextTshirt": "Tshirt",
+    "HomeScreenTextNew": "New Arrival",
+    "HomeScreenTextSeeAll": "See All"
+  },
+  "FilterScreen": {
+    "FilterScreenTextRecent": "Recent searches",
+    "FilterScreenTextResult": "Search results showing for "
   }
 }

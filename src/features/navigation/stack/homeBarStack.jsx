@@ -1,5 +1,21 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
+import ShopScreen from '../../home/shopScreen';
+import {ScreenName} from '../screenName';
+import FavoriteScreen from '../../home/favouriteScreen';
+import ProfileScreen from '../../home/profileScreen';
+import {
+  BuyIcon,
+  BuyActiveIcon,
+  HomeIcon,
+  HomeActiveIcon,
+  HeartIcon,
+  ProfileIcon,
+  ProfileActiveIcon,
+} from 'assets';
+import HomeScreen from '../../home/homeScreen';
+import {Image, View} from 'react-native';
+import HomeStackScreen from './homeStackScreen';
 
 const HomeBar = createBottomTabNavigator();
 const HomeBarStackScreen = () => {
@@ -7,108 +23,116 @@ const HomeBarStackScreen = () => {
     <HomeBar.Navigator
       screenOptions={{
         headerShown: false,
-        tabBarStyle: {paddingBottom: 5, paddingTop: 5},
-        tabBarLabelStyle: { fontSize: 12, fontWeight: '400' },
-        tabBarActiveTintColor:"#E57773"
+        tabBarLabel: '',
+        tabBarStyle: {},
+        tabBarActiveTintColor: '#F67952',
       }}
-      initialRouteName="feed">
-      {/* <HomeBar.Screen
-        key={ScreenName.FEED_SCREEN}
-        name={ScreenName.FEED_SCREEN}
-        component={FeedScreen}
+      initialRouteName={ScreenName.HOME_SCREEN}>
+      <HomeBar.Screen
+        key={ScreenName.HOME_STACK_SCREEN}
+        name={ScreenName.HOME_STACK_SCREEN}
+        component={HomeStackScreen}
         options={{
-          tabBarLabel: 'Feed',
-          tabBarIcon: tabInfo => {
-            return (
-              <Image
-                source={HomeIcon}
-                resizeMode="contain"
-                style={{
-                  width: 25,
-                  height: 25,
-                  tintColor: tabInfo.focused ? '#E57773' : '#000',
-                }}></Image>
-            );
-          },
+          tabBarIcon: ({focused}) => (
+            <FocusedCustom
+              width={20}
+              height={20}
+              focused={focused}
+              icon={HomeIcon}
+              iconActive={HomeActiveIcon}></FocusedCustom>
+          ),
         }}></HomeBar.Screen>
       <HomeBar.Screen
-        key={ScreenName.MATES_SCREEN}
-        name={ScreenName.MATES_SCREEN}
-        component={MatesScreen}
+        key={ScreenName.SHOP_SCREEN}
+        name={ScreenName.SHOP_SCREEN}
+        component={ShopScreen}
         options={{
-          tabBarLabel: 'Mates',
-          tabBarIcon: tabInfo => {
-            return (
-              <Image
-                source={UserGroupIcon}
-                resizeMode="contain"
-                style={{
-                  width: 25,
-                  height: 25,
-                  tintColor: tabInfo.focused ? '#E57773' : '#000',
-                }}></Image>
-            );
-          },
+          tabBarIcon: ({focused}) => (
+            <FocusedCustom
+              width={24}
+              height={24}
+              focused={focused}
+              icon={BuyIcon}
+              iconActive={BuyActiveIcon}></FocusedCustom>
+          ),
         }}></HomeBar.Screen>
       <HomeBar.Screen
-        key={ScreenName.ADD_EVENT_SCREEN}
-        name={ScreenName.ADD_EVENT_SCREEN}
-        component={AddEventScreen}
+        key={ScreenName.FAVORITE_SCREEN}
+        name={ScreenName.FAVORITE_SCREEN}
+        component={FavoriteScreen}
         options={{
-          tabBarLabel: 'Add Event',
-          tabBarIcon: tabInfo => {
-            return (
-              <Image
-                source={PlusIcon}
-                resizeMode="contain"
-                style={{
-                  width: 25,
-                  height: 25,
-                  tintColor: tabInfo.focused ? '#E57773' : '#000',
-                }}></Image>
-            );
-          },
+          tabBarIcon: ({focused}) => (
+            <FocusedCustom
+              width={24}
+              height={24}
+              focused={focused}
+              icon={HeartIcon}
+              iconActive={HeartIcon}></FocusedCustom>
+          ),
         }}></HomeBar.Screen>
       <HomeBar.Screen
         key={ScreenName.PROFILE_SCREEN}
         name={ScreenName.PROFILE_SCREEN}
         component={ProfileScreen}
         options={{
-          tabBarLabel: 'Profile',
-          tabBarIcon: tabInfo => {
-            return (
-              <Image
-                source={UserIcon}
-                resizeMode="contain"
-                style={{
-                  width: 25,
-                  height: 25,
-                  tintColor: tabInfo.focused ? '#E57773' : '#000',
-                }}></Image>
-            );
-          },
+          tabBarIcon: ({focused}) => (
+            <FocusedCustom
+              width={20}
+              height={20}
+              focused={focused}
+              icon={ProfileIcon}
+              iconActive={ProfileActiveIcon}></FocusedCustom>
+          ),
         }}></HomeBar.Screen>
-      <HomeBar.Screen
-        key={ScreenName.MORE_SCREEN}
-        name={ScreenName.MORE_SCREEN}
-        component={MoreScreen}
-        options={{
-          tabBarLabel: 'More',
-          tabBarIcon: tabInfo => {
-            return (
-              <Image
-                source={MoreIcon}
-                resizeMode="contain"
-                style={{
-                  width: 25,
-                  height: 25,
-                  tintColor: tabInfo.focused ? '#E57773' : '#000',
-                }}></Image>
-            );
-          },
-        }}></HomeBar.Screen> */}
     </HomeBar.Navigator>
   );
 };
 
 export default HomeBarStackScreen;
+
+const FocusedCustom = props => {
+  const {focused, icon, iconActive, width, height} = props;
+  return (
+    <View>
+      {focused ? (
+        <View>
+          <View
+            style={{
+              width: 14,
+              height: 5,
+              borderBottomLeftRadius: 10,
+              borderBottomRightRadius: 10,
+              backgroundColor: '#F67952',
+              marginLeft: 3,
+            }}></View>
+          <Image
+            source={iconActive}
+            resizeMode="contain"
+            style={{
+              width: width,
+              height: height,
+              marginTop: 10,
+            }}></Image>
+        </View>
+      ) : (
+        <View>
+          <View
+            style={{
+              width: 14,
+              height: 5,
+              borderBottomLeftRadius: 10,
+              borderBottomRightRadius: 10,
+            }}></View>
+          <Image
+            source={icon}
+            resizeMode="contain"
+            style={{
+              width: width,
+              height: height,
+              marginTop: 10,
+            }}></Image>
+        </View>
+      )}
+    </View>
+  );
+};
