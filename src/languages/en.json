@@ -1,24 +1,25 @@
 {
   "LoginScreen": {
-    "LoginScreenTittleFashionCommerce": "FashionCommerce",
     "LoginScreenTittle": "Log in",
     "LoginScreenPlaceHolderEmail": "Email",
     "LoginScreenPlaceHolderPassword": "Password",
     "LoginScreenButtonLogin": "Login",
     "LoginScreenTextForgotPassword": "Forgot Password?",
-    "LoginScreenTextRegister": "Register",
-    "LoginScreenTextNewUser": "New User?"
+    "LoginScreenTextBtnLogin": "Login",
+    "LoginScreenTextOr": "Or",
+    "LoginScreenTextAccount": "Don’t have an account? ",
+    "LoginScreenTextSignUp": "Sign Up"
   },
   "RegisterScreen": {
-    "RegisterTitleFashionCommerce": "FashionCommerce",
-    "RegisterScreenTitle": "Register",
+    "RegisterScreenTitle": "Sign Up",
     "RegisterScreenPlaceHolderName": "Name",
     "RegisterScreenPlaceHolderEmail": "Email",
-    "RegisterScreenPlaceHolderRepeatPassword": "Repeat password",
     "RegisterScreenPlaceHolderPassword": "Password",
-    "RegisterScreenButtonLogin": "Register",
-    "RegisterScreenTextRegister": "Already have an account?",
-    "RegisterScreenTextLogin": " Login"
+    "RegisterScreenTextAccept": "I accept all the ",
+    "RegisterScreenTextTerm": " Terms & Conditions",
+    "RegisterScreenTextOr": "Or",
+    "RegisterScreenTextAccount": "Already have an account? ",
+    "RegisterScreenTextLogin": "Log In"
   },
   "ForgotPasswordScreen": {
     "ForgotPasswordScreenTitleFashionCommerce": "FashionCommerce",
@@ -41,5 +42,20 @@
     "OnboardScreenTextMakePaymentDesc": "Payment is the transfer of money \nservices in exchange product or Payments \ntypically made terms agreed ",
     "OnboardScreenTextOder": "Get Your Order",
     "OnboardScreenTextOderDesc": "Business or commerce an order is a stated\n intention either spoken to engage in a\n commercial transaction specific products "
+  },
+  "HomeScreen": {
+    "HomeScreenTextExplore": "Explore",
+    "HomeScreenTextBest": "best Outfits for you",
+    "HomeScreenPlaceholderSearch": "Search items...",
+    "HomeScreenTextDress": "Dress",
+    "HomeScreenTextShirt": "Shirt",
+    "HomeScreenTextPants": "Pants",
+    "HomeScreenTextTshirt": "Tshirt",
+    "HomeScreenTextNew": "New Arrival",
+    "HomeScreenTextSeeAll": "See All"
+  },
+  "FilterScreen": {
+    "FilterScreenTextRecent": "Recent searches",
+    "FilterScreenTextResult": "Search results showing for "
   }
 }

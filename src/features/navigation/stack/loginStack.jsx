@@ -5,6 +5,7 @@ import LoginScreen from '../../auth/loginScreen';
 import RegisterScreen from '../../auth/registerScreen';
 import ForgotPassword from '../../auth/forgotPasswordScreen';
 import OnboardScreen from '../../auth/onboard';
+import FilterScreen from '../../home/homeScreen/filterScreen';
 
 const LoginStack = createStackNavigator();
 
@@ -12,14 +13,13 @@ const LoginStackScreen = () => {
   return (
     <LoginStack.Navigator
       screenOptions={{headerShown: false}}
-      initialRouteName={ScreenName.ONBOARD_SCREEN}>
+      initialRouteName={ScreenName.LOGIN_SCREEN}>
       <LoginStack.Screen
         key={ScreenName.LOGIN_SCREEN}
         name={ScreenName.LOGIN_SCREEN}
         component={LoginScreen}
         options={{gestureEnabled: false}}
       />
-
       <LoginStack.Screen
         key={ScreenName.REGISTER_SCREEN}
         name={ScreenName.REGISTER_SCREEN}
@@ -38,6 +38,7 @@ const LoginStackScreen = () => {
         component={OnboardScreen}
         options={{gestureEnabled: false}}
       />
+      
     </LoginStack.Navigator>
   );
 };
