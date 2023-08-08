@@ -2,18 +2,19 @@ import axios from 'axios';
 import VersionInfo from 'react-native-version-info';
 import {env} from './env';
 import {name} from '../../../package.json';
+import AxiosCurlirize from 'axios-curlirize';
 
 /** endpoints to request without Bearer */
 const excludeAuthEndpoints = ['/login'];
 
 const CMApi = axios.create({
-  baseURL: env.BASE_URL,
+  baseURL: 'http://14.225.255.245:8090/',
   headers: {
     'Content-Type': 'application/json',
     'User-Agent': `${name}/${VersionInfo.appVersion}`,
   },
 });
-
+AxiosCurlirize(CMApi);
 CMApi.interceptors.request.use(
   async request => {
     if (excludeAuthEndpoints.includes(request.url ?? '/')) {

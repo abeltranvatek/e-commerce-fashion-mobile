@@ -8,6 +8,7 @@ const initialState = {
   pending: false,
   user: null,
   error: null,
+  token: '',
 };
 
 export default (state = initialState, action) => {
@@ -23,6 +24,7 @@ export default (state = initialState, action) => {
         pending: false,
         user: action.payload.user,
         error: null,
+        token: action.payload.token,
       };
     case FETCH_LOGIN_FAILURE:
       return {
