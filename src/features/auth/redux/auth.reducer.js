@@ -2,6 +2,9 @@ import {
   FETCH_LOGIN_REQUEST,
   FETCH_LOGIN_FAILURE,
   FETCH_LOGIN_SUCCESS,
+  FETCH_REGISTER_REQUEST,
+  FETCH_REGISTER_SUCCESS,
+  FETCH_REGISTER_FAILURE,
 } from './auth.actionTypes';
 
 const initialState = {
@@ -31,6 +34,24 @@ export default (state = initialState, action) => {
         ...state,
         pending: false,
         user: null,
+        error: action.payload.error,
+      };
+    case FETCH_REGISTER_REQUEST:
+      return {
+        ...state,
+        pending: true,
+      };
+    case FETCH_REGISTER_SUCCESS:
+      return {
+        ...state,
+        pending: false,
+        error: null,
+        user: action.payload.user,
+      };
+    case FETCH_REGISTER_FAILURE:
+      return {
+        ...state,
+        pending: true,
         error: action.payload.error,
       };
     default:

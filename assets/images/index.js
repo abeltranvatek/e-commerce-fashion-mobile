@@ -27,3 +27,4 @@ export {default as ShirtIcon} from './shirtIcon.png';
 export {default as PantsIcon} from './pantsIcon.png';
 export {default as TshirtIcon} from './tshirtIcon.png';
 export {default as ImgExample} from './imgExample.png';
+export {default as XIcon} from './xIcon.png';

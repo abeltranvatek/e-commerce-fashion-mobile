@@ -30,9 +30,9 @@ const LoginScreen = () => {
   const onClickLogin = () => {
     dispatch(fetchLoginRequest({username: email, password: password}));
   };
-  if (error === 'Bad credentials') {
-    Alert.alert('Email or password wrong');
-  }
+  // if (error === 'Bad credentials') {
+  //   Alert.alert('Email or password wrong');
+  // }
   return (
     <SafeAreaView style={LoginScreenStyles.container}>
       <View style={LoginScreenStyles.viewContainer}>

@@ -26,6 +26,17 @@ import {useState} from 'react';
 
 const RegisterScreen = () => {
   const [check, setCheck] = useState(false);
+  const [name, setName] = useState();
+  const [password, setPassword] = useState();
+  const [email, setEmail] = useState();
+  const userRegister = {
+    userName: name,
+    emailAddress: email,
+    password: password,
+  };
+  const handleRegister = () => {
+    console.log(userRegister);
+  };
   return (
     <SafeAreaView style={SignUpScreenStyles.container}>
       <View style={SignUpScreenStyles.viewContainer}>
@@ -35,25 +46,24 @@ const RegisterScreen = () => {
         </Text>
         <View style={SignUpScreenStyles.form}>
           <InputCustom
+            onChangeText={setName}
             icon={UserIcon}
             placeholder={translate(
               'RegisterScreen.RegisterScreenPlaceHolderName',
             )}></InputCustom>
           <InputCustom
+            onChangeText={setEmail}
             icon={LetterIcon}
             placeholder={translate(
               'RegisterScreen.RegisterScreenPlaceHolderEmail',
             )}></InputCustom>
           <InputCustom
+            onChangeText={setPassword}
             icon={PasswordIcon}
             placeholder={translate(
               'RegisterScreen.RegisterScreenPlaceHolderPassword',
             )}></InputCustom>
           <View style={SignUpScreenStyles.checkBox}>
-            {/* <BouncyCheckbox
-              size={25}
-              fillColor="#F67952"
-              unfillColor="#FFFFFF"></BouncyCheckbox> */}
             <TouchableOpacity
               onPress={() => {
                 setCheck(!check);
@@ -75,7 +85,9 @@ const RegisterScreen = () => {
           </View>
         </View>
         <View style={SignUpScreenStyles.bottom}>
-          <TouchableOpacity style={SignUpScreenStyles.btn}>
+          <TouchableOpacity
+            style={SignUpScreenStyles.btn}
+            onPress={handleRegister}>
             <Text style={SignUpScreenStyles.btnText}>
               {translate('RegisterScreen.RegisterScreenTitle')}
             </Text>

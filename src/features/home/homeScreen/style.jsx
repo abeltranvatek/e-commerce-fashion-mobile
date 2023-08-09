@@ -11,8 +11,17 @@ export const HomeScreenStyles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     paddingTop: 11,
+    position: 'relative',
   },
-
+  overlay: {
+    position: 'absolute',
+    flex: 1,
+    width: '100%',
+    height: '100%',
+    backgroundColor: '#000',
+    opacity: 0.5,
+    pointerEvents: 'none',
+  },
   textContainer: {
     marginTop: 32,
   },

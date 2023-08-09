@@ -11,4 +11,6 @@ export const ScreenName = {
   PROFILE_SCREEN: 'ProfileScreen',
   FILTER_SCREEN: 'FilterScreen',
   HOME_STACK_SCREEN: 'HomeStackScreen',
+  SEARCH_SCREEN: 'SearchScreen',
+  SEARCH_STACK_SCREEN: 'SearchStackScreen',
 };

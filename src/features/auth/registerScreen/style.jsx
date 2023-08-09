@@ -36,7 +36,7 @@ export const SignUpScreenStyles = StyleSheet.create({
     backgroundColor: '#fff',
     borderWidth: 1,
     marginRight: 3,
-    borderColor: '#1C1A19',
+    borderColor: '#EBEBEB',
     opacity: 0.5,
     borderRadius: 3,
   },

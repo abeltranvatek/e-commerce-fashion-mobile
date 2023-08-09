@@ -56,6 +56,12 @@
   },
   "FilterScreen": {
     "FilterScreenTextRecent": "Recent searches",
-    "FilterScreenTextResult": "Search results showing for "
+    "FilterScreenTextResult": "Search results showing for ",
+    "FilterScreenTextClear": "Clear",
+    "FilterScreenTextFilter": "Filters",
+    "FilterScreenTextCategory": "Category",
+    "FilterScreenTextPrice": "Pricing",
+    "FilterScreenTextDistance": "Distance",
+    "FilterScreenTextbtn":"Apply Filter"
   }
 }

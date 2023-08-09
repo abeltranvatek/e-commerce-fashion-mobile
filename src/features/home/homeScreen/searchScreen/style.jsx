@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-export const FilterScreenStyles = StyleSheet.create({
+export const SearchScreenStyles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',

@@ -18,7 +18,7 @@ const AppRouter = () => {
   return (
     <Stack.Navigator
       screenOptions={{headerShown: false}}
-      initialRouteName={ScreenName.STACK_LOGIN_SCREEN}>
+      initialRouteName={ScreenName.HOME_BAR_STACK_SCREEN}>
       <Stack.Screen
         name={ScreenName.STACK_LOGIN_SCREEN}
         component={LoginStackScreen}

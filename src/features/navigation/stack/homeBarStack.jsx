@@ -16,9 +16,12 @@ import {
 import HomeScreen from '../../home/homeScreen';
 import {Image, View} from 'react-native';
 import HomeStackScreen from './homeStackScreen';
+import {useSelector} from 'react-redux';
+import {useState} from 'react';
 
 const HomeBar = createBottomTabNavigator();
 const HomeBarStackScreen = () => {
+  const {count} = useSelector(state => state.navigationReducer);
   return (
     <HomeBar.Navigator
       screenOptions={{
@@ -28,20 +31,40 @@ const HomeBarStackScreen = () => {
         tabBarActiveTintColor: '#F67952',
       }}
       initialRouteName={ScreenName.HOME_SCREEN}>
-      <HomeBar.Screen
-        key={ScreenName.HOME_STACK_SCREEN}
-        name={ScreenName.HOME_STACK_SCREEN}
-        component={HomeStackScreen}
-        options={{
-          tabBarIcon: ({focused}) => (
-            <FocusedCustom
-              width={20}
-              height={20}
-              focused={focused}
-              icon={HomeIcon}
-              iconActive={HomeActiveIcon}></FocusedCustom>
-          ),
-        }}></HomeBar.Screen>
+      {count === 1 ? (
+        <HomeBar.Screen
+          key={ScreenName.HOME_STACK_SCREEN}
+          name={ScreenName.HOME_STACK_SCREEN}
+          component={HomeStackScreen}
+          options={{
+            tabBarStyle: {
+              display: 'none',
+            },
+            tabBarIcon: ({focused}) => (
+              <FocusedCustom
+                width={20}
+                height={20}
+                focused={focused}
+                icon={HomeIcon}
+                iconActive={HomeActiveIcon}></FocusedCustom>
+            ),
+          }}></HomeBar.Screen>
+      ) : (
+        <HomeBar.Screen
+          key={ScreenName.HOME_STACK_SCREEN}
+          name={ScreenName.HOME_STACK_SCREEN}
+          component={HomeStackScreen}
+          options={{
+            tabBarIcon: ({focused}) => (
+              <FocusedCustom
+                width={20}
+                height={20}
+                focused={focused}
+                icon={HomeIcon}
+                iconActive={HomeActiveIcon}></FocusedCustom>
+            ),
+          }}></HomeBar.Screen>
+      )}
       <HomeBar.Screen
         key={ScreenName.SHOP_SCREEN}
         name={ScreenName.SHOP_SCREEN}

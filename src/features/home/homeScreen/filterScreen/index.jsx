@@ -1,64 +1,92 @@
 import React from 'react';
-import {View, SafeAreaView, Image, FlatList, Text} from 'react-native';
+import {
+  View,
+  SafeAreaView,
+  Image,
+  FlatList,
+  Text,
+  TouchableOpacity,
+} from 'react-native';
 import Header from '../header';
 import Search from '../search';
 import {ArrowRight0Icon, ImgExample} from 'assets';
 import {FilterScreenStyles} from './style';
 import {translate} from '~utils/language';
+import {XIcon} from 'assets';
+import {useDispatch} from 'react-redux';
+import {fetchNavTow} from '../../../navigation/stack/redux/action';
+import {useState} from 'react';
+import InputRange from '../../../../core/component/inputRange';
 
-const FilterScreen = () => {
+const FilterScreen = props => {
+  const {setFilter} = props;
+  const dispatch = useDispatch();
+  const [id, setId] = useState(1);
   const data = [
-    {id: 1},
-    {id: 2},
-    {id: 3},
-    {id: 4},
-    {id: 5},
-    {id: 6},
-    {id: 7},
-    {id: 8},
-    {id: 9},
-    {id: 10},
-    {id: 11},
-    {id: 12},
+    {id: 1, name: 'New Arrival'},
+    {id: 2, name: 'Top Tranding'},
+    {id: 3, name: 'Featured Products'},
   ];
-
   return (
     <SafeAreaView style={FilterScreenStyles.container}>
-      <View style={FilterScreenStyles.viewHeader}>
-        <Header></Header>
-        <View style={FilterScreenStyles.search}>
-          <Search></Search>
-        </View>
-        <View style={FilterScreenStyles.ViewHeaderItem}>
-          <Text style={FilterScreenStyles.ViewHeaderItemText}>
-            {translate('FilterScreen.FilterScreenTextRecent')}
-          </Text>
-          <Image source={ArrowRight0Icon}></Image>
-        </View>
+      <View style={FilterScreenStyles.header}>
+        <Text style={FilterScreenStyles.headerTextClear}>
+          {translate('FilterScreen.FilterScreenTextClear')}
+        </Text>
+        <Text style={FilterScreenStyles.headerTextFilter}>
+          {translate('FilterScreen.FilterScreenTextFilter')}
+        </Text>
+        <TouchableOpacity
+          onPress={() => {
+            setFilter(false);
+            dispatch(fetchNavTow());
+          }}>
+          <Image source={XIcon}></Image>
+        </TouchableOpacity>
       </View>
       <View style={FilterScreenStyles.div}></View>
-      <View style={FilterScreenStyles.ViewBottom}>
-        <Text style={FilterScreenStyles.textResult}>
-          {translate('FilterScreen.FilterScreenTextResult')}
+      <View style={FilterScreenStyles.bottom}>
+        <Text style={FilterScreenStyles.textCategoryTitle}>
+          {translate('FilterScreen.FilterScreenTextCategory')}
         </Text>
-        <FlatList
-          data={data}
-          showsVerticalScrollIndicator={false}
-          numColumns={2}
-          keyExtractor={item => item.id}
-          renderItem={({item}) => (
-            <View style={FilterScreenStyles.flatListBottomItem}>
-              <Image
-                source={ImgExample}
-                style={FilterScreenStyles.flatListBottomItemImg}></Image>
-              <Text style={FilterScreenStyles.flatListBottomItemName}>
-                {'Long Sleeve Shirts'}
+        <View style={FilterScreenStyles.categoryContainer}>
+          {data.map(item => (
+            <TouchableOpacity
+              style={
+                id === item.id
+                  ? FilterScreenStyles.categoryActive
+                  : FilterScreenStyles.category
+              }
+              onPress={() => {
+                setId(item.id);
+              }}
+              key={item.id}>
+              <Text
+                style={
+                  id === item.id
+                    ? FilterScreenStyles.texCategoryActive
+                    : FilterScreenStyles.textCategory
+                }>
+                {item.name}
               </Text>
-              <Text style={FilterScreenStyles.flatListBottomItemPrice}>
-                {'$175'}
-              </Text>
-            </View>
-          )}></FlatList>
+            </TouchableOpacity>
+          ))}
+        </View>
+        <View style={FilterScreenStyles.priceContainer}>
+          <Text style={FilterScreenStyles.priceText}>
+            {translate('FilterScreen.FilterScreenTextPrice')}
+          </Text>
+          <Text style={FilterScreenStyles.priceSelect}>{'$50-$200'}</Text>
+        </View>
+        <View style={FilterScreenStyles.priceContainer}>
+          <Text style={FilterScreenStyles.priceText}>
+            {translate('FilterScreen.FilterScreenTextPrice')}
+          </Text>
+          <Text style={FilterScreenStyles.priceSelect}>{'$50-$200'}</Text>
+        </View>
+        <TouchableOpacity style={FilterScreenStyles.btnFilter}>
+          <Text style={FilterScreenStyles.btnFilterText}>{translate('FilterScreen.FilterScreenTextbtn')}</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );

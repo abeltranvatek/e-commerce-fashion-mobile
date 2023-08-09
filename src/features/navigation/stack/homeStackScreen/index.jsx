@@ -4,6 +4,7 @@ import {View} from 'react-native';
 import {ScreenName} from '../../screenName';
 import HomeScreen from '../../../home/homeScreen';
 import FilterScreen from '../../../home/homeScreen/filterScreen';
+import SearchScreen from '../../../home/homeScreen/searchScreen';
 
 const HomeStack = createStackNavigator();
 const HomeStackScreen = () => {
@@ -16,9 +17,18 @@ const HomeStackScreen = () => {
         name={ScreenName.HOME_SCREEN}
         component={HomeScreen}></HomeStack.Screen>
       <HomeStack.Screen
+        options={
+          {
+            
+          }
+        }
         key={ScreenName.FILTER_SCREEN}
         name={ScreenName.FILTER_SCREEN}
         component={FilterScreen}></HomeStack.Screen>
+      <HomeStack.Screen
+        key={ScreenName.SEARCH_SCREEN}
+        name={ScreenName.SEARCH_SCREEN}
+        component={SearchScreen}></HomeStack.Screen>
     </HomeStack.Navigator>
   );
 };

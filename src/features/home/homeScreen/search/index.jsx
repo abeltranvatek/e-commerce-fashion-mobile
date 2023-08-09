@@ -1,19 +1,22 @@
 import React, {useState} from 'react';
 import {Image, TextInput, TouchableOpacity, View} from 'react-native';
 import {SearchIcon, FilterIcon} from 'assets';
-import {SearchStyles} from './style';
 import {translate} from '~utils/language';
 import {navigate} from '~utils/navigation';
 import {ScreenName} from '../../../navigation/screenName';
-
-const Search = () => {
+import {SearchStyles} from './style';
+import {useDispatch} from 'react-redux';
+import {fetchNavOne, fetchNavTow} from '../../../navigation/stack/redux/action';
+const Search = props => {
+  const dispatch = useDispatch();
+  const {setFilter} = props;
   const [value, setValue] = useState();
   return (
     <View style={SearchStyles.searchContainer}>
       <View style={SearchStyles.search}>
         <TouchableOpacity
           onPress={() => {
-            navigate({screen: ScreenName.FILTER_SCREEN});
+            navigate({screen: ScreenName.SEARCH_SCREEN});
           }}>
           <Image source={SearchIcon} style={SearchStyles.searchIcon}></Image>
         </TouchableOpacity>
@@ -24,9 +27,15 @@ const Search = () => {
             value ? value : translate('HomeScreen.HomeScreenPlaceholderSearch')
           }></TextInput>
       </View>
-      <View style={SearchStyles.filterContainer}>
-        <Image source={FilterIcon}></Image>
-      </View>
+      <TouchableOpacity
+        onPress={() => {
+          dispatch(fetchNavOne());
+          setFilter(true);
+        }}>
+        <View style={SearchStyles.filterContainer}>
+          <Image source={FilterIcon}></Image>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 };

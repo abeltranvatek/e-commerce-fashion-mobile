@@ -1,77 +1,109 @@
-import {StyleSheet} from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
+const height = Dimensions.get('window').height;
 
 export const FilterScreenStyles = StyleSheet.create({
   container: {
-    flex: 1,
     width: '100%',
+    height: height * 0.7,
+    backgroundColor: '#FBFBFD',
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
     alignItems: 'center',
   },
-  viewHeader: {
+  header: {
     width: '90%',
-    marginBottom: 11,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 30,
   },
-  search: {
+  headerTextClear: {
+    fontSize: 14,
+    fontWeight: '400',
+    color: '#230A06',
+  },
+  headerTextFilter: {
+    fontSize: 19,
+    fontWeight: '500',
+    color: '#230A06',
+  },
+  div: {
     width: '100%',
-    marginTop: 10,
-  },
-  ViewHeaderItem: {
+    height: 1,
+    backgroundColor: '#1C1A19',
+    opacity: 0.05,
     marginTop: 22,
+  },
+  bottom: {
+    width: '90%',
+    marginTop: 22,
+  },
+  textCategoryTitle: {
+    fontSize: 18,
+    fontWeight: '500',
+    color: '#230A06',
+    alignSelf: 'flex-start',
+  },
+  categoryContainer: {
+    marginTop: 20,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-  ViewHeaderItemText: {
-    fontSize: 16,
-    fontWeight: '500',
-    color: '#230A06',
+  categoryActive: {
+    height: 46,
+    padding: 10,
+    backgroundColor: '#F67952',
     textAlign: 'center',
-  },
-  div: {
-    backgroundColor: '#1C1A19',
-    width: '100%',
-    height: 0.65,
-    marginTop: 13,
-  },
-  ViewBottom: {
-    marginTop: 13,
-    width: '90%',
     alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 5,
   },
-  textResult: {
-    fontSize: 16,
-    fontWeight: '500',
-    color: '#230A06',
-    marginBottom: 30,
-    marginTop: 15,
-    alignSelf: 'flex-start',
-  },
-  flatListBottomItem: {
-    width: 155,
-    height: 190,
-    padding: 6,
-    borderRadius: 15,
+  category: {
+    height: 46,
+    padding: 10,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    marginRight: 20,
-    marginBottom: 20,
-  },
-  flatListBottomItemImg: {
-    width: '100%',
-    height: 130,
-    resizeMode: 'cover',
-    aspectRatio: 1.1 / 1,
-  },
-  flatListBottomItemName: {
-    fontSize: 12,
-    fontWeight: '400',
-    color: '#000',
     textAlign: 'center',
-    marginTop: 9,
+    borderRadius: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  flatListBottomItemPrice: {
+  texCategoryActive: {
+    fontSize: 12,
+    fontWeight: '500',
+    color: '#fff',
+  },
+  textCategory: {
     fontSize: 12,
     fontWeight: '500',
     color: '#000',
-    marginTop: 5,
+  },
+  priceContainer: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  priceText: {
+    fontSize: 18,
+    fontWeight: '500',
+    color: '#230A06',
+  },
+  priceSelect: {
+    fontSize: 12,
+    fontWeight: '500',
+    color: '#230A06',
+  },
+
+  btnFilter: {
+    width: '60%',
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: '#F67952',
+  },
+  btnFilterText: {
+    fontSize: 16,
+    fontWeight: '500',
+    color: '#fff',
   },
 });

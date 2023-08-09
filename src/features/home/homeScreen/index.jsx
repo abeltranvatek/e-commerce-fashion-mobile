@@ -23,6 +23,7 @@ import {HomeScreenStyles} from './style';
 import {translate} from '~utils/language';
 import Header from './header';
 import Search from './search';
+import FilterScreen from './filterScreen';
 
 const dataIcon = [
   {
@@ -46,10 +47,11 @@ const dataIcon = [
     text: translate('HomeScreen.HomeScreenTextTshirt'),
   },
 ];
-const dataFlatlist = [ {id: 1}, {id: 2}, {id: 3}, {id: 4}];
+const dataFlatlist = [{id: 1}, {id: 2}, {id: 3}, {id: 4}];
 const HomeScreen = () => {
   const [active, setActive] = useState(true);
   const [id, setId] = useState(2);
+  const [filter, setFilter] = useState(false);
   return (
     <SafeAreaView style={HomeScreenStyles.container}>
       <View style={HomeScreenStyles.viewContainer}>
@@ -62,7 +64,7 @@ const HomeScreen = () => {
             {translate('HomeScreen.HomeScreenTextBest')}
           </Text>
         </View>
-        <Search></Search>
+        <Search setFilter={setFilter}></Search>
         <View style={HomeScreenStyles.flatListTop}>
           {dataIcon.map(item => (
             <TouchableOpacity
@@ -123,6 +125,8 @@ const HomeScreen = () => {
             )}></FlatList>
         </View>
       </View>
+      {filter && <View style={HomeScreenStyles.overlay}></View>}
+      {filter && <FilterScreen setFilter={setFilter}></FilterScreen>}
     </SafeAreaView>
   );
 };
