@@ -1,39 +1,33 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
 
 export const InputRangeStyles = StyleSheet.create({
   container: {
-    width: '100%',
-  },
-  priceContainer: {
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
+    marginTop: 50,
   },
-  priceText: {
-    fontSize: 18,
-    fontWeight: '500',
-    color: '#230A06',
+  caption: {
+    fontSize: 16,
   },
-  priceSelect: {
-    fontSize: 12,
-    fontWeight: '500',
-    color: '#230A06',
+  sliderContainer: {
+    width: Dimensions.get('window').width * 0.8,
+    height: 5,
+    marginTop: 20,
+    backgroundColor: '#E0E0E0',
+    borderRadius: 2.5,
+    position: 'relative',
   },
-  lableContainer: {
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+  rangeThumb: {
+    width: 20,
+    height: 20,
+    borderRadius: 10,
+    backgroundColor: '#FF4081',
+    position: 'absolute',
+    top: -7.5,
   },
-  track: {
-    height: 3,
-    backgroundColor: '#000',
-    borderRadius: 3,
-  },
-  knob: {
-    width: 8,
-    height: 8,
-    borderRadius: 4,
-    marginTop: -8,
+  rangeTrack: {
+    height: 5,
+    backgroundColor: '#FF4081',
   },
 });

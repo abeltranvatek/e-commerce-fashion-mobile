@@ -1,61 +1,49 @@
-import React from 'react';
-import {View} from 'react-native';
+import React, {useState} from 'react';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  Dimensions,
+} from 'react-native';
 import {InputRangeStyles} from './style';
-import Animated, {
-  useAnimatedStyle,
-  useAnimatedGestureHandler,
-  useSharedValue,
-} from 'react-native-reanimated';
-import {PanGestureHandler} from 'react-native-gesture-handler';
 
-const styline = useAnimatedStyle(() => {
-  return {
-    backgroundColor: ' #F67952',
-    height: 3,
-    marginTop: -3,
-    borderRadius: 3,
+const RangeSlider = () => {
+  const [minValue, setMinValue] = useState(0);
+  const [maxValue, setMaxValue] = useState(100);
+
+  const handleMinValueChange = value => {
+    setMinValue(value);
   };
-});
-const xkonb1 = useSharedValue(0);
-const gestureHandle1 = useAnimatedGestureHandler({
-  onStart: (_, ctx) => {
-    ctx.startX = xkonb1.value;
-  },
-  onActive: (e, ctx) => {
-    xkonb1.value =
-      e.translationX + ctx.startX < 0 ? 0 : e.translationX + ctx.startX;
-  },
-  onEnd: () => {},
-});
-const styleKnob1 = useAnimatedStyle(() => {
-  return {
-    transform: [{translateX: xkonb1.value}],
+
+  const handleMaxValueChange = value => {
+    setMaxValue(value);
   };
-});
-const InputRange = props => {
-  const {min, max} = props;
+
   return (
     <View style={InputRangeStyles.container}>
-      <View style={InputRangeStyles.priceContainer}>
-        <Text style={InputRangeStyles.priceText}>
-          {translate('FilterScreen.FilterScreenTextPrice')}
-        </Text>
-        <Text style={InputRangeStyles.priceSelect}>{'$50-$200'}</Text>
-      </View>
-      <View style={InputRangeStyles.lableContainer}>
-        <Text>{min}</Text>
-        <Text>{max}</Text>
-      </View>
-      <View style={InputRangeStyles.track}></View>
-      <Animated.View style={styline}></Animated.View>
-      <View>
-        <PanGestureHandler onGestureEvent={gestureHandle1}>
-          <Animated.View
-            style={[InputRangeStyles.knob, styleKnob1]}></Animated.View>
-        </PanGestureHandler>
+      <Text style={InputRangeStyles.caption}>
+        Min Value: {minValue} Max Value: {maxValue}
+      </Text>
+
+      <View style={InputRangeStyles.sliderContainer}>
+        <TouchableOpacity
+          style={[InputRangeStyles.rangeThumb, {left: minValue + '%'}]}
+          onPress={() => console.log('Min Thumb Pressed')}
+        />
+        <TouchableOpacity
+          style={[InputRangeStyles.rangeThumb, {left: maxValue + '%'}]}
+          onPress={() => console.log('Max Thumb Pressed')}
+        />
+        <View
+          style={[
+            InputRangeStyles.rangeTrack,
+            {left: minValue + '%', width: maxValue - minValue + '%'},
+          ]}
+        />
       </View>
     </View>
   );
 };
 
-export default InputRange;
+export default RangeSlider;

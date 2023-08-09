@@ -17,6 +17,8 @@ import {useDispatch} from 'react-redux';
 import {fetchNavTow} from '../../../navigation/stack/redux/action';
 import {useState} from 'react';
 import InputRange from '../../../../core/component/inputRange';
+import RangeSliderInput from '../../../../core/component/inputRange';
+import RangeSlider from '../../../../core/component/inputRange';
 
 const FilterScreen = props => {
   const {setFilter} = props;
@@ -72,20 +74,26 @@ const FilterScreen = props => {
             </TouchableOpacity>
           ))}
         </View>
+      </View>
+      <View style={FilterScreenStyles.bottombtn}>
         <View style={FilterScreenStyles.priceContainer}>
           <Text style={FilterScreenStyles.priceText}>
             {translate('FilterScreen.FilterScreenTextPrice')}
           </Text>
           <Text style={FilterScreenStyles.priceSelect}>{'$50-$200'}</Text>
         </View>
+        <RangeSlider></RangeSlider>
         <View style={FilterScreenStyles.priceContainer}>
           <Text style={FilterScreenStyles.priceText}>
-            {translate('FilterScreen.FilterScreenTextPrice')}
+            {translate('FilterScreen.FilterScreenTextDistance')}
           </Text>
-          <Text style={FilterScreenStyles.priceSelect}>{'$50-$200'}</Text>
+          <Text style={FilterScreenStyles.priceSelect}>{'500m-2km'}</Text>
         </View>
+        <RangeSlider></RangeSlider>
         <TouchableOpacity style={FilterScreenStyles.btnFilter}>
-          <Text style={FilterScreenStyles.btnFilterText}>{translate('FilterScreen.FilterScreenTextbtn')}</Text>
+          <Text style={FilterScreenStyles.btnFilterText}>
+            {translate('FilterScreen.FilterScreenTextbtn')}
+          </Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>

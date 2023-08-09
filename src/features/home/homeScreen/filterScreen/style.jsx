@@ -38,6 +38,11 @@ export const FilterScreenStyles = StyleSheet.create({
     width: '90%',
     marginTop: 22,
   },
+  bottombtn: {
+    width: '90%',
+    alignItems: 'center',
+  },
+
   textCategoryTitle: {
     fontSize: 18,
     fontWeight: '500',
@@ -83,6 +88,7 @@ export const FilterScreenStyles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    marginTop: 40,
   },
   priceText: {
     fontSize: 18,
@@ -100,10 +106,14 @@ export const FilterScreenStyles = StyleSheet.create({
     height: 60,
     borderRadius: 30,
     backgroundColor: '#F67952',
+    marginTop: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   btnFilterText: {
     fontSize: 16,
     fontWeight: '500',
     color: '#fff',
+    textAlign: 'center',
   },
 });
