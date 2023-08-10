@@ -24,6 +24,9 @@ import {translate} from '~utils/language';
 import Header from './header';
 import Search from './search';
 import FilterScreen from './filterScreen';
+import {useEffect} from 'react';
+import {useDispatch} from 'react-redux';
+import {fetchNavOne, fetchNavTow} from '../../navigation/stack/redux/action';
 
 const dataIcon = [
   {
@@ -49,6 +52,7 @@ const dataIcon = [
 ];
 const dataFlatlist = [{id: 1}, {id: 2}, {id: 3}, {id: 4}];
 const HomeScreen = () => {
+ 
   const [active, setActive] = useState(true);
   const [id, setId] = useState(2);
   const [filter, setFilter] = useState(false);

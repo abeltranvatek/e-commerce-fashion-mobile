@@ -12,6 +12,7 @@ const initialState = {
   user: null,
   error: null,
   token: '',
+  tokenRegister: null,
 };
 
 export default (state = initialState, action) => {
@@ -47,6 +48,7 @@ export default (state = initialState, action) => {
         pending: false,
         error: null,
         user: action.payload.user,
+        tokenRegister: action.payload.tokenRegister,
       };
     case FETCH_REGISTER_FAILURE:
       return {

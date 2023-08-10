@@ -19,7 +19,7 @@ export const HomeScreenStyles = StyleSheet.create({
     width: '100%',
     height: '100%',
     backgroundColor: '#000',
-    opacity: 0.5,
+    opacity: 0.7,
     pointerEvents: 'none',
   },
   textContainer: {

@@ -4,7 +4,7 @@ export const fetchNavOne = payload => ({
   type: FETCH_NAV_ONE,
   payload,
 });
-export const fetchNavTow = payload => ({
+export const fetchNavTwo = payload => ({
     type: FETCH_NAV_TWO,
     payload,
   });

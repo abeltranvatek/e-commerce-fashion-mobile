@@ -13,4 +13,5 @@ export const ScreenName = {
   HOME_STACK_SCREEN: 'HomeStackScreen',
   SEARCH_SCREEN: 'SearchScreen',
   SEARCH_STACK_SCREEN: 'SearchStackScreen',
+  PRODUCT_DETAILS_SCREEN:"ProductDetailsScreen"
 };

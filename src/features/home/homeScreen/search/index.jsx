@@ -7,10 +7,12 @@ import {ScreenName} from '../../../navigation/screenName';
 import {SearchStyles} from './style';
 import {useDispatch} from 'react-redux';
 import {fetchNavOne, fetchNavTow} from '../../../navigation/stack/redux/action';
+import {useEffect} from 'react';
 const Search = props => {
   const dispatch = useDispatch();
   const {setFilter} = props;
   const [value, setValue] = useState();
+  
   return (
     <View style={SearchStyles.searchContainer}>
       <View style={SearchStyles.search}>

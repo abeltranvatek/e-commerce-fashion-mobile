@@ -13,7 +13,7 @@ export default (state = initialState, action) => {
     case FETCH_NAV_TWO:
       return {
         ...state,
-        count: 1,
+        count: 2,
       };
     default:
       return {

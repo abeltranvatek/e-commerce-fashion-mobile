@@ -12,11 +12,11 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {RegisterAPI} from '../apis/registerAPI';
 
 const loginRequest = userRequest => loginAPI(userRequest);
+const RegisterRequest = userRequest => RegisterAPI(userRequest);
 function* fetchLoginSaga(action) {
   try {
     const response = yield loginAPI(action.payload);
     yield AsyncStorage.setItem('accessToken', response.token);
-    console.log(response);
     yield put(
       fetchLoginSuccess({
         user: response.user,
@@ -33,12 +33,17 @@ function* fetchLoginSaga(action) {
 }
 function* fetchRegisterSaga(action) {
   try {
-    yield (response = yield RegisterAPI(action.payload));
-    yield put(fetchRegisterSuccess)
+    const response = yield call(RegisterAPI, action.payload);
+    console.log(response);
+    yield put(
+      fetchRegisterSuccess({
+        tokenRegister: response.token,
+      }),
+    );
   } catch (e) {
     yield put(
       fetchRegisterFailure({
-        error: e.message,
+        error: 'knakss',
       }),
     );
   }

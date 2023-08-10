@@ -6,6 +6,8 @@ import {
   Image,
   Text,
   TouchableOpacity,
+  Modal,
+  Pressable,
 } from 'react-native';
 import InputCustom from '../../../components/inputCustom';
 import {translate} from '../../../utils/language';
@@ -23,19 +25,28 @@ import {navigate} from '~utils/navigation';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
 import {ScreenName} from '../../navigation/screenName';
 import {useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {useEffect} from 'react';
+import {fetchRegisterRequest} from '../redux/auth.actions';
 
 const RegisterScreen = () => {
   const [check, setCheck] = useState(false);
   const [name, setName] = useState();
   const [password, setPassword] = useState();
   const [email, setEmail] = useState();
+  const [modal, setModal] = useState(false);
+  const dispatch = useDispatch();
+  const {tokenRegister} = useSelector(state => state.authorizeReducer);
+  // useEffect(() => {
+  //   setModal(true);
+  // }, [tokenRegister]);
   const userRegister = {
     userName: name,
     emailAddress: email,
     password: password,
   };
   const handleRegister = () => {
-    console.log(userRegister);
+    dispatch(fetchRegisterRequest(userRegister));
   };
   return (
     <SafeAreaView style={SignUpScreenStyles.container}>
@@ -120,6 +131,25 @@ const RegisterScreen = () => {
           </View>
         </View>
       </View>
+      {modal && <View style={SignUpScreenStyles.overlay}></View>}
+      {
+        <Modal animationType="fade" transparent={true} visible={modal}>
+          <View style={SignUpScreenStyles.centeredView}>
+            <View style={SignUpScreenStyles.modalView}>
+              <Text style={SignUpScreenStyles.modalText}>
+                {translate('RegisterScreen.RegisterScreenTextSuccess')}
+              </Text>
+              <TouchableOpacity
+                style={[SignUpScreenStyles.button]}
+                onPress={() => navigate({screen: ScreenName.LOGIN_SCREEN})}>
+                <Text style={SignUpScreenStyles.textStyle}>
+                  {translate('RegisterScreen.RegisterScreenTextToLogin')}
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </Modal>
+      }
     </SafeAreaView>
   );
 };

@@ -19,7 +19,9 @@
     "RegisterScreenTextTerm": " Terms & Conditions",
     "RegisterScreenTextOr": "Or",
     "RegisterScreenTextAccount": "Already have an account? ",
-    "RegisterScreenTextLogin": "Log In"
+    "RegisterScreenTextLogin": "Log In",
+    "RegisterScreenTextSuccess": "Register Successfully",
+    "RegisterScreenTextToLogin": "To login Screen"
   },
   "ForgotPasswordScreen": {
     "ForgotPasswordScreenTitleFashionCommerce": "FashionCommerce",
@@ -62,6 +64,10 @@
     "FilterScreenTextCategory": "Category",
     "FilterScreenTextPrice": "Pricing",
     "FilterScreenTextDistance": "Distance",
-    "FilterScreenTextbtn":"Apply Filter"
+    "FilterScreenTextbtn": "Apply Filter"
+  },
+  "ProductDetailScreen": {
+    "ProductDetailScreenTextColor": "Color",
+    "ProductDetailScreenTextbtn": "Add to cart"
   }
 }

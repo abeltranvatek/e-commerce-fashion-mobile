@@ -1,5 +1,6 @@
 export {default as OnboardImg} from './onboardImg.png';
 export {default as Logo} from './logo.png';
+export {default as ArrowLeftIcon} from './arrowLeft.png';
 export {default as ArrowRight0Icon} from './arrowRight0.png';
 export {default as ArrowRight1Icon} from './arrowRight1.png';
 export {default as ArrowRight2Icon} from './arrowRight2.png';
@@ -28,3 +29,5 @@ export {default as PantsIcon} from './pantsIcon.png';
 export {default as TshirtIcon} from './tshirtIcon.png';
 export {default as ImgExample} from './imgExample.png';
 export {default as XIcon} from './xIcon.png';
+export {default as HeartRedIcon} from './heartRed.png';
+export {default as ProductImg} from './productImg.png';

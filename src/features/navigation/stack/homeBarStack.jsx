@@ -21,7 +21,8 @@ import {useState} from 'react';
 
 const HomeBar = createBottomTabNavigator();
 const HomeBarStackScreen = () => {
-  const {count} = useSelector(state => state.navigationReducer);
+  const { count } = useSelector(state => state.navigationReducer);
+  console.log(count)
   return (
     <HomeBar.Navigator
       screenOptions={{

@@ -14,7 +14,7 @@ import {FilterScreenStyles} from './style';
 import {translate} from '~utils/language';
 import {XIcon} from 'assets';
 import {useDispatch} from 'react-redux';
-import {fetchNavTow} from '../../../navigation/stack/redux/action';
+import {fetchNavTow, fetchNavTwo} from '../../../navigation/stack/redux/action';
 import {useState} from 'react';
 import InputRange from '../../../../core/component/inputRange';
 import RangeSliderInput from '../../../../core/component/inputRange';
@@ -41,7 +41,7 @@ const FilterScreen = props => {
         <TouchableOpacity
           onPress={() => {
             setFilter(false);
-            dispatch(fetchNavTow());
+            dispatch(fetchNavTwo());
           }}>
           <Image source={XIcon}></Image>
         </TouchableOpacity>
